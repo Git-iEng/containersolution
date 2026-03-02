@@ -27,9 +27,6 @@ from .utils_contact import normalize_phone_and_country, country_name_from_alpha2
 NAME_RE  = re.compile(r"^[A-Za-z\s'.-]{2,}$")
 PHONE_RE = re.compile(r"^\+?\d[\d\s\-()]{6,}$")
 
-
-
-
 # ---------- Email helpers ----------
 def _send_email(subject: str, text_body: str, html_body: str | None, recipients: list[str] | None):
     """Low-level sender used by async wrappers."""
