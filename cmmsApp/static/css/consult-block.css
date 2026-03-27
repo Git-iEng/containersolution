@@ -189,8 +189,8 @@
 /* ===== SUBMIT BUTTON ===== */
 
 .consult-send {
-  grid-column: 2;
-  justify-self: end;
+ grid-column: 1 / -1;
+  justify-self: flex-start;
   display: inline-flex;
   align-items: center;
   gap: .5rem;
@@ -302,4 +302,81 @@
   .global-toast {
     width: calc(100% - 24px);
   }
+}
+.form-actions {
+  grid-column: 1 / -1;   /* full width row */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.form-captcha {
+  margin: 0;
+}
+
+.consult-send {
+  margin: 0;
+}
+.form-captcha {
+  grid-column: 1 / 2;
+}
+
+.consult-send {
+  grid-column: 2 / 3;
+  justify-self: end;
+  align-self: center;
+}
+.form-actions {
+    margin-top: 14px;
+}
+
+.form-wrap {
+    margin-bottom: 12px;
+}
+
+.form-wrap .g-recaptcha {
+    display: inline-block;
+}
+
+/* button normal style */
+.consult-send,
+button.consult-send {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 170px;
+    width: auto;
+    max-width: 220px;
+    padding: 12px 24px;
+    margin: 0;
+    white-space: nowrap;
+    border-radius: 12px;
+}
+
+/* mobile */
+@media (max-width: 540px) {
+    .form-actions {
+        display: block;
+    }
+
+    .form-wrap {
+        width: 100%;
+        overflow: hidden;
+        margin-bottom: 14px;
+    }
+
+    .form-wrap .g-recaptcha {
+        transform: scale(0.90);
+        transform-origin: left top;
+    }
+
+    .consult-send,
+    button.consult-send {
+        display: inline-flex ;
+        width: auto;
+        min-width: 170px;
+        max-width: 200px;
+        padding: 12px 20px;
+    }
 }
